@@ -8,10 +8,7 @@ public class OrderDto {
 	private String production;
 	private int scope;
 	private String status;
-	
-	
-	
-	
+
 	public OrderDto(Long idOrder, String shop, String address, String production, int scope, String status) {
 		super();
 		this.idOrder = idOrder;
@@ -61,7 +58,7 @@ public class OrderDto {
 	public void setScope(int scope) {
 		this.scope = scope;
 	}
-	
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
@@ -72,13 +69,8 @@ public class OrderDto {
 
 	@Override
 	public String toString() {
-		return "(" + "idOrder=" + idOrder  
-				+ " shop=" + shop 
-				+ " address=" + address 
-				+ " production=" + production 
-				+ " scope=" + scope 
-				+ " status=" + status 
-				+ ")";
+		return "(" + "idOrder=" + idOrder + " shop=" + shop + " address=" + address + " production=" + production
+				+ " scope=" + scope + " status=" + status + ")";
 	}
-	
+
 }

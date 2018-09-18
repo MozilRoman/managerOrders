@@ -12,48 +12,30 @@ import com.softserve.edu.items.controllers.commons.Security;
 import com.softserve.edu.items.services.IocContainer;
 import com.softserve.edu.items.services.OrderServise;
 
-/**
- * Servlet implementation class DeleteOrderServlet
- */
 @WebServlet("/orderdelete")
 public class OrderProfileDeleteOrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private OrderServise orderServise;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public OrderProfileDeleteOrderServlet() {
-        super();
-        orderServise = IocContainer.get().getOrderServise(); 
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public OrderProfileDeleteOrderServlet() {
+		super();
+		orderServise = IocContainer.get().getOrderServise();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		if (!Security.isActiveSession(request, response)) {
-			getServletConfig()
-				.getServletContext()
-				.getRequestDispatcher(ControllerUrls.LOGOUT_SERVLET.toString())
-				.forward(request, response);
-		} 
-		else {
-		//idItem
-		orderServise.deleteOrder(Long
-				.parseLong(request.getParameter("idOrder")));
-		getServletConfig()
-			.getServletContext()
-			.getRequestDispatcher(ControllerUrls.ORDERS_SERVLET.toString())
-			.forward(request, response);
+			getServletConfig().getServletContext().getRequestDispatcher(ControllerUrls.LOGOUT_SERVLET.toString())
+					.forward(request, response);
+		} else {
+			orderServise.deleteOrder(Long.parseLong(request.getParameter("idOrder")));
+			getServletConfig().getServletContext().getRequestDispatcher(ControllerUrls.ORDERS_SERVLET.toString())
+					.forward(request, response);
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 

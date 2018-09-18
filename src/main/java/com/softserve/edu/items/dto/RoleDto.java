@@ -34,5 +34,5 @@ public class RoleDto {
 	public String toString() {
 		return "(" + "roles=" + roles.toString() + ")";
 	}
-	
+
 }

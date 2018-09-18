@@ -1,6 +1,5 @@
 package com.softserve.edu.items.dao;
 
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -21,13 +20,11 @@ abstract class ADaoRead<TEntity> implements IDaoRead<TEntity> {
 
 	protected ADaoRead() {
 		this.sqlQueries = new HashMap<Enum<?>, Enum<?>>();
-		// TODO Call init();
+
 	}
 
-	// TODO Use Builder
-	// TODO Use List<String>
 	protected abstract TEntity createInstance(String[] args);
-	
+
 	protected abstract void init();
 
 	// Read
@@ -56,14 +53,12 @@ abstract class ADaoRead<TEntity> implements IDaoRead<TEntity> {
 				try {
 					resultSet.close();
 				} catch (Exception ex) {
-					// TODO Warning
 				}
 			}
 			if (statement != null) {
 				try {
 					statement.close();
 				} catch (Exception ex) {
-					// TODO Warning
 				}
 			}
 		}
@@ -74,21 +69,17 @@ abstract class ADaoRead<TEntity> implements IDaoRead<TEntity> {
 	}
 
 	public TEntity getById(Long id) {
-		return getQueryResult(String.format(
-				sqlQueries.get(SqlQueries.GET_BY_ID).toString(), id),
-				SqlQueries.GET_BY_ID).get(0);
+		return getQueryResult(String.format(sqlQueries.get(SqlQueries.GET_BY_ID).toString(), id), SqlQueries.GET_BY_ID)
+				.get(0);
 	}
 
 	public List<TEntity> getByFieldName(String fieldName, String text) {
-		return getQueryResult(String.format(
-				sqlQueries.get(SqlQueries.GET_BY_FIELD).toString(), fieldName, text),
+		return getQueryResult(String.format(sqlQueries.get(SqlQueries.GET_BY_FIELD).toString(), fieldName, text),
 				SqlQueries.GET_BY_FIELD);
 	}
 
 	public List<TEntity> getAll() {
-		return getQueryResult(
-				sqlQueries.get(SqlQueries.GET_ALL).toString(),
-				SqlQueries.GET_ALL);
+		return getQueryResult(sqlQueries.get(SqlQueries.GET_ALL).toString(), SqlQueries.GET_ALL);
 	}
 
 }

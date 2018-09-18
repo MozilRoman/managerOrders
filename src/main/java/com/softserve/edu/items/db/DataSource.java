@@ -8,15 +8,12 @@ public final class DataSource {
 	private String username;
 	private String password;
 
-	// TODO Create Factory, Builder
 	public DataSource(Driver jdbcDriver, String connectionUrl, String username, String password) {
 		this.jdbcDriver = jdbcDriver;
-		this.connectionUrl = connectionUrl;//mognaconntction rozbutu na URL,user, pass?
+		this.connectionUrl = connectionUrl;
 		this.username = username;
 		this.password = password;
 	}
-
-	// setters
 
 	public void setJdbcDriver(Driver jdbcDriver) {
 		this.jdbcDriver = jdbcDriver;
@@ -33,8 +30,6 @@ public final class DataSource {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	// getters
 
 	public Driver getJdbcDriver() {
 		return jdbcDriver;

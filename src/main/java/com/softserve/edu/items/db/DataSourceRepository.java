@@ -18,25 +18,12 @@ public final class DataSourceRepository {
 		try {
 			sqlDriver = new com.mysql.jdbc.Driver();
 		} catch (SQLException e) {
-			// TODO Develop Custom Exceptions
 			throw new RuntimeException(FAILED_JDBC_DRIVER);
 		}
-		//return new DataSource(sqlDriver, //dlya Note
-		//		"jdbc:mysql://localhost:3306/softdb?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Kiev", "root", "root"); //zminutu grupy
-		
-		return new DataSource(sqlDriver, //dlya Order
-				"jdbc:mysql://localhost:3306/soft_order_db?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Kiev", "root", "root"); //zminutu grupy
-		
-		
-		
-		
-		//return new DataSource(sqlDriver,
-				//"jdbc:mysql://localhost:3306/lv326", "root", "root"); //zminutu grupy
+		return new DataSource(sqlDriver, 
+				"jdbc:mysql://localhost:3306/soft_order_db?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Kiev",
+				"root", "root"); 
+
 	}
-/*
-	public static DataSource getSybaseLocalHost() {
-		return new DataSource(new net.sourceforge.jtds.jdbc.Driver(),
-				"jdbc:jtds:sqlserver://CLASS02/lv326;instance=SQLEXPRESS;", "db326", "db326");
-	}*/
 
 }

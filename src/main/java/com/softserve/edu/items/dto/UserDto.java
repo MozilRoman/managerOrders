@@ -2,11 +2,11 @@ package com.softserve.edu.items.dto;
 
 public class UserDto {
 
-    private String login;
-    private String password;
-    private String name;
-    private String role;
-    
+	private String login;
+	private String password;
+	private String name;
+	private String role;
+
 	public UserDto(String login, String password, String name, String role) {
 		this.login = login;
 		this.password = password;
@@ -52,11 +52,7 @@ public class UserDto {
 
 	@Override
 	public String toString() {
-		return "(" + "login=" + login 
-				+ " password=" + password 
-				+ " name=" + name 
-				+ " role=" + role 
-				+ ")";
+		return "(" + "login=" + login + " password=" + password + " name=" + name + " role=" + role + ")";
 	}
 
 }

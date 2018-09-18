@@ -11,10 +11,7 @@ public class ConnectionManager {
 	private final static String FAILED_CREATE_CONNECTION = "Failed to Create Connection";
 	private final static String FAILED_CLOSE_CONNECTION = "Failed to Close Connection";
 	private final static String FAILED_CONNECTION = "Connection Failed";
-
-	//
 	private static volatile ConnectionManager instance = null;
-	//
 	private DataSource dataSource;
 	private final Map<Long, Connection> connections;
 
@@ -38,7 +35,7 @@ public class ConnectionManager {
 		return instance;
 	}
 
-	private void checkStatus(DataSource dataSource) {//- na poshatkyzabezpet4ye zberigannayatablv tomy g vugliadi
+	private void checkStatus(DataSource dataSource) {
 		/*-		dataSource		this.dataSource		    Action
 		 * 			null			null				create default
 		 * 			null			not null			nothing
@@ -49,7 +46,7 @@ public class ConnectionManager {
 			if (getDataSource() == null) {
 				setDataSource(DataSourceRepository.getDefault());
 			}
-		} else if ((getDataSource() == null) || (!getDataSource().equals(dataSource))) { //2 ymova ozna4 ne=
+		} else if ((getDataSource() == null) || (!getDataSource().equals(dataSource))) { // 2 ymova ozna4 ne=
 			setDataSource(dataSource);
 		}
 	}
@@ -100,7 +97,6 @@ public class ConnectionManager {
 		try {
 			getConnection().setAutoCommit(false);
 		} catch (SQLException e) {
-			// TODO Develop Custom Exceptions
 			throw new RuntimeException(FAILED_CONNECTION, e);
 		}
 	}
@@ -109,7 +105,6 @@ public class ConnectionManager {
 		try {
 			getConnection().commit();
 		} catch (SQLException e) {
-			// TODO Develop Custom Exceptions
 			throw new RuntimeException(FAILED_CONNECTION, e);
 		}
 	}
@@ -118,7 +113,6 @@ public class ConnectionManager {
 		try {
 			getConnection().rollback();
 		} catch (SQLException e) {
-			// TODO Develop Custom Exceptions
 			throw new RuntimeException(FAILED_CONNECTION, e);
 		}
 	}

@@ -8,10 +8,8 @@ public class OrderServise {
 
 	private OrderDao orderDao;
 
-	// TODO This is temporary, must be delete
 	public OrderServise() {
 		this.orderDao = new OrderDao();
-		//orderDao = IocContainer.get().getOrderDao();
 	}
 
 	public OrderServise(OrderDao orderDao) {
@@ -23,7 +21,7 @@ public class OrderServise {
 		return new OrderDto(order.getId(), order.getShop(), order.getAddress(), order.getProduction(),  order.getScope(), order.getStatus() );
 	}
 
-	public boolean setOrderDto(OrderDto orderDto, Long idUser) {//zaminuty metodu
+	public boolean setOrderDto(OrderDto orderDto, Long idUser) {
 		boolean result = false;
 		Order order = new Order(orderDto.getIdOrder(), orderDto.getShop(), orderDto.getAddress(), orderDto.getProduction(),  orderDto.getScope(), orderDto.getStatus(), idUser);
 		if (orderDto.getIdOrder() > 0) {
@@ -43,7 +41,6 @@ public class OrderServise {
 		try {
 			orderDao.getById(id);
 		} catch (RuntimeException e) {
-			// Logging Exception
 			System.out.println("Order not found, message: " + e.getMessage());
 			result = false;
 		}
@@ -55,7 +52,6 @@ public class OrderServise {
 		try {
 			result = result && orderDao.deleteById(id);
 		} catch (RuntimeException e) {
-			// Logging Exception
 			result = false;
 		}
 		return result;

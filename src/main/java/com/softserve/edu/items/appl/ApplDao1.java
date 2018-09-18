@@ -4,11 +4,8 @@ package com.softserve.edu.items.appl;
 import com.softserve.edu.items.dao.OrderDao;
 import com.softserve.edu.items.dao.RoleDao;
 import com.softserve.edu.items.dao.UserDao;
-import com.softserve.edu.items.entity.Order;
-import com.softserve.edu.items.entity.Role;
-import com.softserve.edu.items.entity.User;
 
-public class ApplDao1 {//dlya Order
+public class ApplDao1 {
 
 	public static void main(String[] args) {
 		System.out.println("Start ...");
@@ -45,12 +42,12 @@ public class ApplDao1 {//dlya Order
 		//
 		// Update
 		//roleDao.updateByEntity(new Role(30L, "Administrator12112"));
-		//roleDao.updateByFieldName("name", "User", "name", "User1");// перші2 поля на шо змінити,а 3,4 поле які змін
+		//roleDao.updateByFieldName("name", "User", "name", "User1");// пїЅпїЅпїЅпїЅпїЅ2 пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ,пїЅ 3,4 пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ
 		//
 		
-		//userDao.updateByEntity(new User(3L, "3@333", "333", "userOleg33", 2L));//ост парам не читається і не змін
-		//userDao.updateByFieldName("name", "userOleg123", "password", "qwerty11");//1парам-колонку яку змін 2-знач яке встав в (1)колонку 3-назва колонки 4-знач обєкта який тре змінити і це знач береться з колонки пункту 3
-		// до попер query = UPDATE users SET name = 'adminIvanSuper' WHERE login = 'ivan11'
+		//userDao.updateByEntity(new User(3L, "3@333", "333", "userOleg33", 2L));//пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅ
+		//userDao.updateByFieldName("name", "userOleg123", "password", "qwerty11");//1пїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ 2-пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ (1)пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 3-пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 4-пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 3
+		// пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ query = UPDATE users SET name = 'adminIvanSuper' WHERE login = 'ivan11'
 		//
 		//orderDao.updateByEntity(new Order(3L, "Arsen1", "str.Three", "Artek1", 33,"done", 2L));
 		//orderDao.updateByFieldName("scope", "5", "shop", "Achan");

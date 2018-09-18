@@ -18,10 +18,8 @@ public class Security {
 				break;
 			}
 		}
-		return (session != null)
-				&& (session.getAttribute("loginDto") != null)
-				&& (((LoginDto) (session.getAttribute("loginDto"))).getLogin() != null)
-				&& (idSessionCookie != null)
+		return (session != null) && (session.getAttribute("loginDto") != null)
+				&& (((LoginDto) (session.getAttribute("loginDto"))).getLogin() != null) && (idSessionCookie != null)
 				&& (idSessionCookie.getValue().equals(session.getId()));
 	}
 

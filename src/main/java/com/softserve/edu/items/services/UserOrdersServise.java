@@ -13,12 +13,9 @@ public class UserOrdersServise {
 	private UserDao userDao;
 	private OrderDao orderDao;
 
-	// TODO This is temporary, must be delete
 	public UserOrdersServise() {
 		userDao = new UserDao();
 		orderDao = new OrderDao();
-		//userDao = IocContainer.get().getUserDao();
-		//orderDao = IocContainer.get().getOrderDao();
 	}
 
 	public UserOrdersServise(UserDao userDao, OrderDao orderDao) {
@@ -29,15 +26,9 @@ public class UserOrdersServise {
 	public UserOrdersDto getUserOrders(UserDto userDto) {
 		User user = userDao.getUserEntityByLogin(userDto.getLogin());
 		UserOrdersDto userOrdersDto = new UserOrdersDto(user.getLogin());
-		// TODO get fixed count
 		for (Order order : orderDao.getOrderEntityByIdUser(user.getId())) {
-			OrderDto orderDto = new OrderDto(order.getId(),
-					order.getShop(),
-					order.getAddress(),
-					order.getProduction(),
-					order.getScope(),
-					order.getStatus()
-					);
+			OrderDto orderDto = new OrderDto(order.getId(), order.getShop(), order.getAddress(), order.getProduction(),
+					order.getScope(), order.getStatus());
 			userOrdersDto.addOrderDto(orderDto);
 		}
 		return userOrdersDto;

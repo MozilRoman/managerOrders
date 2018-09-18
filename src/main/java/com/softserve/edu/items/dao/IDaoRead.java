@@ -11,6 +11,5 @@ public interface IDaoRead<TEntity> {
 
 	List<TEntity> getAll();
 
-	// List<TEntity> getFilterRange(int partNumber, int partSize, Map<String, String> filters);
 
 }

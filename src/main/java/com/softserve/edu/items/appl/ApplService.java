@@ -1,6 +1,6 @@
 package com.softserve.edu.items.appl;
 
-import com.softserve.edu.items.dto.OrderDto; //змінити в іменах пакетів на ордер
+import com.softserve.edu.items.dto.OrderDto; 
 import com.softserve.edu.items.dto.LoginDto;
 import com.softserve.edu.items.dto.UserOrdersDto;
 import com.softserve.edu.items.services.IocContainer;
@@ -28,7 +28,7 @@ public class ApplService {
 		}*/
 		//
 		// Update Item
-		//LoginDto loginDto = new LoginDto("ivan", "qwerty");//передтим як роботи апдейт перевіритичиєтакий юзер
+		//LoginDto loginDto = new LoginDto("ivan", "qwerty");//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 		//UserOrdersDto userOrdersDto = userOrdersServise
 		//		.getUserOrders(userService.getUserDto(loginDto));
 		//OrderDto orderDto = userOrdersDto.getOrders().get(1);
